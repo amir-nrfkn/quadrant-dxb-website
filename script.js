@@ -292,31 +292,6 @@ contactForm.addEventListener('submit', function (e) {
         return;
     }
 
-    // Gather form data
-    const formData = new FormData(contactForm);
-    const fullName = formData.get('fullName') || '';
-    const companyName = formData.get('companyName') || '';
-    const email = formData.get('email') || '';
-    const phone = formData.get('phone') || '';
-    const message = formData.get('message') || '';
-
-    // Get the display text of the selected interest
-    const interestSelect = document.getElementById('interest');
-    const interestText = interestSelect.options[interestSelect.selectedIndex].text;
-
-    // Construct email subject and body
-    const emailSubject = `${interestText} - ${fullName}`;
-    const emailBody = `${companyName}
-${email}
-${phone}
-
-----------------------------------------
-
-${message}`;
-
-    // Trigger the mailto link to open the user's email client
-    window.location.href = `mailto:sales@quadrantdubai.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-
     // Show success message
     formSuccess.classList.add('show');
 
