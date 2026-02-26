@@ -122,7 +122,7 @@ const translations = {
 
     /* -- Footer -- */
     footerCopyright: { en: '© 2025 Quadrant Trading LLC. All rights reserved.', ar: '© 2025 شركة كوادرنت للتجارة ذ.م.م. جميع الحقوق محفوظة.' },
-    footerLicense: { en: 'Trade License No.: [placeholder]', ar: 'رقم الرخصة التجارية: [يُحدّد لاحقاً]' },
+    footerLicense: { en: 'Trade License No.: 1155319', ar: 'رقم الرخصة التجارية: 1155319' },
 };
 
 
