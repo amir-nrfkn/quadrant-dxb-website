@@ -1,0 +1,43 @@
+;;
+;; Domain:     quadrantdubai.com.
+;; Exported:   2026-02-26 09:11:34
+;;
+;; This file is intended for use for informational and archival
+;; purposes ONLY and MUST be edited before use on a production
+;; DNS server.  In particular, you must:
+;;   -- update the SOA record with the correct authoritative name server
+;;   -- update the SOA record with the contact e-mail address information
+;;   -- update the NS record(s) with the authoritative name servers for this domain.
+;;
+;; For further information, please consult the BIND documentation
+;; located on the following website:
+;;
+;; http://www.isc.org/
+;;
+;; And RFC 1035:
+;;
+;; http://www.ietf.org/rfc/rfc1035.txt
+;;
+;; Please note that we do NOT offer technical support for any use
+;; of this zone data, the BIND name server, or any other third-party
+;; DNS software.
+;;
+;; Use at your own risk.
+;; SOA Record
+quadrantdubai.com	3600	IN	SOA	achiel.ns.cloudflare.com. dns.cloudflare.com. 2052376369 10000 2400 604800 3600
+
+;; NS Records
+quadrantdubai.com.	86400	IN	NS	achiel.ns.cloudflare.com.
+quadrantdubai.com.	86400	IN	NS	magali.ns.cloudflare.com.
+
+;; A Records
+mail.quadrantdubai.com.	1	IN	A	66.49.194.26 ; cf_tags=cf-proxied:false
+quadrantdubai.com.	1	IN	A	66.49.194.26 ; cf_tags=cf-proxied:false
+
+;; MX Records
+quadrantdubai.com.	1	IN	MX	0 quadrantdubai.com.
+
+;; TXT Records
+default._domainkey.quadrantdubai.com.	1	IN	TXT	"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtUufXVNWtwH0D9DSMW6cak7Fv1EsC/SJdcZznjkh/QK6rvHBGFs2m5Dk83CSRlYe/7Bn2kJZWnnO3271MITu4Pe7AoXehLDcMMuSFt6vboBf1C6xQywsaG1OCm0HnpM8amEw+oWF6UwAt8x8XjQ5lQJgPEDzJouCy5Xc8rvXtyr2NQLEaK3y6oFlp3CDXqD+H"
+_dmarc.quadrantdubai.com.	1	IN	TXT	"v=DMARC1; p=none; rua=mailto:postmaster@quadrantdubai.com"
+quadrantdubai.com.	1	IN	TXT	"v=spf1 +a +mx +ip4:66.49.204.85 ~all"

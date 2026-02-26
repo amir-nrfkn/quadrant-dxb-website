@@ -279,8 +279,7 @@ window.addEventListener('scroll', function () {
 
 /* ------------------------------------------------------------------
    5. CONTACT FORM HANDLING
-   Client-side validation + success message display.
-   No backend — form just shows a success state on valid submit.
+   Client-side validation + success message display + Netlify submission.
    ------------------------------------------------------------------ */
 contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -292,19 +291,31 @@ contactForm.addEventListener('submit', function (e) {
         return;
     }
 
-    // Show success message
-    formSuccess.classList.add('show');
+    const formData = new FormData(contactForm);
+    fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+    })
+        .then(() => {
+            // Show success message
+            formSuccess.classList.add('show');
 
-    // Reset the form
-    contactForm.reset();
+            // Reset the form
+            contactForm.reset();
 
-    // Scroll the success message into view
-    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // Scroll the success message into view
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-    // Hide success message after 8 seconds
-    setTimeout(function () {
-        formSuccess.classList.remove('show');
-    }, 8000);
+            // Hide success message after 8 seconds
+            setTimeout(function () {
+                formSuccess.classList.remove('show');
+            }, 8000);
+        })
+        .catch((error) => {
+            console.error('Form submission error:', error);
+            alert('There was an error submitting the form. Please try again.');
+        });
 });
 
 
